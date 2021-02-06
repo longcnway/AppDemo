@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/bt_bottom_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="底部按钮TabLayout学习"/>
+
+    <Button
+        android:id="@+id/bt_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="滚动控件recyclerView学习"/>
+
+    <Button
+        android:id="@+id/bt_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显式Intent，隐式Intent"/>
+
+    <Button
+        android:id="@+id/bt_broadcastReceiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="广播接收器BroadcastReceiver学习"/>
+
+    <Button
+        android:id="@+id/bt_out_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用广播实现强制下线功能"/>
+
+    <Button
+        android:id="@+id/bt_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送通知Notification"/>
+
+    <Button
+        android:id="@+id/bt_webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WebView学习"/>
+
+    <Button
+        android:id="@+id/bt_httpURLConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HttpURLConnection学习"/>
+
+    <Button
+        android:id="@+id/bt_okHttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OkHttp学习"/>
+
+</LinearLayout>

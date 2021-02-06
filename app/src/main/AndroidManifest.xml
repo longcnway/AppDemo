@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.demo.activity">
+    <!-- 声明使用网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppDemo">
+        <activity android:name=".OkHttpActivity"></activity>
+        <activity android:name=".HttpURLConnectionActivity" />
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".IntentActivity" />
+        <activity android:name=".BottomTabLayoutActivity" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".BroadcastReceiverActivity" /> <!-- 静态注册广播 -->
+        <receiver
+            android:name="com.demo.broadcastReceiver.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.demo.broadcastReceiver.MY_BroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

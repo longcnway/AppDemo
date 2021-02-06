@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AppDemo</string>
+
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+
+    <string name="tab_text1">微信</string>
+    <string name="tab_text2">通讯录</string>
+    <string name="tab_text3">发现</string>
+    <string name="tab_text4">我</string>
+
+    <string name="bt_str_line">线性</string>
+    <string name="bt_str_grid">网格</string>
+    <string name="bt_str_stag">瀑布流</string>
+</resources>
