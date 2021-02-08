@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_startService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Service 启动服务"/>
+
+    <Button
+        android:id="@+id/bt_stopService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Service 停止服务"/>
+
+    <Button
+        android:id="@+id/bt_bindService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bind Service 绑定服务"/>
+
+    <Button
+        android:id="@+id/bt_unbindService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unbind Service 解绑服务"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="如果一个服务既调用了startService(),
+        又调用了bindService(),根据Android系统的机制，
+        一个服务只要被启动或者被绑定，就会一直处于运行状态，
+        所以需要调用stopService()和unbindService()方法，
+        onDestory()方法才会执行，服务才能被销毁"/>
+
+    <Button
+        android:id="@+id/bt_startForegroundService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="startForeground（）前台服务"/>
+
+    <Button
+        android:id="@+id/bt_startIntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start IntentService 运行在子线程，集开启和停止于一身"/>
+
+</LinearLayout>

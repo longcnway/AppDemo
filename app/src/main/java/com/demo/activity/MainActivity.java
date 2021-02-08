@@ -1,13 +1,14 @@
 package com.demo.activity;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Intent intent;
     private Button bt_BottomTabLayout, bt_RecyclerView, bt_Intent, bt_Out_Login,
             bt_BroadcastReceiver, bt_Notification, bt_WebView, bt_HttpURLConnection,
-            bt_OkHttp;
+            bt_OkHttp, bt_ServcieTest, bt_Download;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_WebView = (Button) findViewById(R.id.bt_webView);
         bt_HttpURLConnection = (Button) findViewById(R.id.bt_httpURLConnection);
         bt_OkHttp = (Button) findViewById(R.id.bt_okHttp);
+        bt_ServcieTest = (Button) findViewById(R.id.bt_serviceTest);
+        bt_Download  = (Button) findViewById(R.id.bt_download);
 
         bt_BottomTabLayout.setOnClickListener(this);
         bt_RecyclerView.setOnClickListener(this);
@@ -50,6 +53,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_WebView.setOnClickListener(this);
         bt_HttpURLConnection.setOnClickListener(this);
         bt_OkHttp.setOnClickListener(this);
+        bt_ServcieTest.setOnClickListener(this);
+        bt_Download.setOnClickListener(this);
     }
 
     /**
@@ -86,19 +91,32 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.bt_notification :
                 //发送通知notification，学习
-                Log.d("TAG", "onClick: ----------bt_notification-----------");
+                /**使用Notification通知再Android8.0以上的的通知要设置渠道，否则就无法显示**/
+                String ID = "com.demo.activity";	//这里的id里面输入自己的项目的包的路径
+                String NAME = "Channel One";
                 intent = new Intent(MainActivity.this, NotificationActivity.class);
                 PendingIntent pi = PendingIntent.getActivity(MainActivity.this, 0, intent, 0);
+                NotificationCompat.Builder notificationBuilder; //创建服务对象
                 NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-                Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                        .setContentTitle("通知标题")
-                        .setContentText("通知内容####################################！")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NotificationChannel channel = new NotificationChannel(ID, NAME, manager.IMPORTANCE_HIGH);
+                    channel.enableLights(true);
+                    channel.setShowBadge(true);
+                    channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+                    manager.createNotificationChannel(channel);
+                    notificationBuilder = new NotificationCompat.Builder(this).setChannelId(ID);
+                } else {
+                    notificationBuilder = new NotificationCompat.Builder(this);
+                }
+                notificationBuilder.setContentTitle("通知标题")
+                        .setContentText("通知内容##################通知内容")
                         .setWhen(System.currentTimeMillis())
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.fruit_imge1))
                         .setContentIntent(pi)
-                        .setAutoCancel(true)
+                        .setAutoCancel(true)//取消通知
                         .build();
+                Notification notification = notificationBuilder.build();
                 manager.notify(1, notification);
                 break;
             case R.id.bt_webView :
@@ -114,6 +132,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.bt_okHttp :
                 //OkHttp学习
                 intent = new Intent(MainActivity.this, OkHttpActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_serviceTest :
+                //Service服务学习
+                intent = new Intent(MainActivity.this, ServiceTestActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_download :
+                //下载综合示例
+                intent = new Intent(MainActivity.this, DownloadActivity.class);
                 startActivity(intent);
                 break;
 

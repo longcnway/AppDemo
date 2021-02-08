@@ -59,4 +59,16 @@
         android:layout_height="wrap_content"
         android:text="OkHttp学习"/>
 
+    <Button
+        android:id="@+id/bt_serviceTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Service服务学习"/>
+
+    <Button
+        android:id="@+id/bt_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下载综合示例"/>
+
 </LinearLayout>

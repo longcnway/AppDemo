@@ -3,6 +3,10 @@
     package="com.demo.activity">
     <!-- 声明使用网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 声明前台服务权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 声明访问SD卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDemo">
-        <activity android:name=".OkHttpActivity"></activity>
+        <activity android:name=".DownloadActivity"></activity>
+
+        <service
+            android:name="com.demo.service.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.demo.service.MyIntentService"
+            android:exported="false" />
+        <service
+            android:name="com.demo.service.MyStartForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.demo.service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ServiceTestActivity" />
+        <activity android:name=".OkHttpActivity" />
         <activity android:name=".HttpURLConnectionActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NotificationActivity" />
