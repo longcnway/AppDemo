@@ -2,10 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.demo.activity">
     <!-- 声明使用网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 声明前台服务权限 -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <!-- 声明访问SD卡权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 声明前台服务权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 声明访问SD卡权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -15,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDemo">
-        <activity android:name=".DownloadActivity"></activity>
+
 
         <service
             android:name="com.demo.service.DownloadService"
@@ -50,6 +48,12 @@
         <activity android:name=".BottomTabLayoutActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".BroadcastReceiverActivity" /> <!-- 静态注册广播 -->
+        <activity android:name=".DownloadActivity" />
+        <activity
+            android:name=".UIMaterialDesignActivity"
+            android:label="Fruits" />
+        <activity android:name=".FruitActivity" android:theme="@style/FruitActivityTheme"></activity>
+
         <receiver
             android:name="com.demo.broadcastReceiver.MyBroadcastReceiver"
             android:enabled="true"

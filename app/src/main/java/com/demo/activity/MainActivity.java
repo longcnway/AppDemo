@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Intent intent;
     private Button bt_BottomTabLayout, bt_RecyclerView, bt_Intent, bt_Out_Login,
             bt_BroadcastReceiver, bt_Notification, bt_WebView, bt_HttpURLConnection,
-            bt_OkHttp, bt_ServcieTest, bt_Download;
+            bt_OkHttp, bt_ServcieTest, bt_Download, bt_UI_MaterialDesign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_HttpURLConnection = (Button) findViewById(R.id.bt_httpURLConnection);
         bt_OkHttp = (Button) findViewById(R.id.bt_okHttp);
         bt_ServcieTest = (Button) findViewById(R.id.bt_serviceTest);
-        bt_Download  = (Button) findViewById(R.id.bt_download);
+        bt_Download = (Button) findViewById(R.id.bt_download);
+        bt_UI_MaterialDesign = (Button) findViewById(R.id.bt_UI_MaterialDesign);
 
         bt_BottomTabLayout.setOnClickListener(this);
         bt_RecyclerView.setOnClickListener(this);
@@ -55,6 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_OkHttp.setOnClickListener(this);
         bt_ServcieTest.setOnClickListener(this);
         bt_Download.setOnClickListener(this);
+        bt_UI_MaterialDesign.setOnClickListener(this);
     }
 
     /**
@@ -142,6 +144,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.bt_download :
                 //下载综合示例
                 intent = new Intent(MainActivity.this, DownloadActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_UI_MaterialDesign :
+                //UI体验--MaterialDesign实战
+                intent = new Intent(MainActivity.this, UIMaterialDesignActivity.class);
                 startActivity(intent);
                 break;
 

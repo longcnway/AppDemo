@@ -71,4 +71,10 @@
         android:layout_height="wrap_content"
         android:text="下载综合示例"/>
 
+    <Button
+        android:id="@+id/bt_UI_MaterialDesign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UI体验--MaterialDesign实战"/>
+
 </LinearLayout>
