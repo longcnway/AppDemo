@@ -1,6 +1,7 @@
 package com.demo.util;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.demo.model.App;
 import com.google.gson.Gson;
@@ -41,6 +42,10 @@ public class HttpUtil {
      * @param listener
      */
     public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
+        if(!isNetworkAvailable()){
+            Toast.makeText(MyApplication.getContext(), "网络不可用", Toast.LENGTH_SHORT).show();
+            return;
+        }
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -76,10 +81,11 @@ public class HttpUtil {
                 }
             }
         }).start();
-
-
     }
 
+    private static boolean isNetworkAvailable(){
+        return true;
+    }
     /**
      * GSON解析
      * @param jsonData
