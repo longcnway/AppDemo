@@ -77,4 +77,22 @@
         android:layout_height="wrap_content"
         android:text="UI体验--MaterialDesign实战"/>
 
+    <Button
+        android:id="@+id/bt_my_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义view画圆"/>
+
+    <Button
+        android:id="@+id/bt_weiqi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="围棋"/>
+
+    <Button
+        android:id="@+id/bt_event_dispatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="事件分发"/>
+
 </LinearLayout>

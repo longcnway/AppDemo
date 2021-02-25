@@ -6,4 +6,23 @@
     </style>
     <style name="FruitActivityTheme" parent="AppTheme">
     </style>
+
+    <!-- 自定义view代码 -->
+    <!--name为声明的"属性集合"名，可以随便取，但是最好是设置为跟我们的View一样的名称-->
+    <declare-styleable name="MyView">
+        <!--声明我们的属性，名称为default_size,取值类型为尺寸类型（dp,px等）-->
+        <attr name="default_size" format="dimension" />
+    </declare-styleable>
+
+    <!-- 围棋自定义属性 -->
+    <declare-styleable name="WeiqiView">
+        <!-- 黑子颜色 -->
+        <attr name="leftscolor" format="reference|color"/>
+        <!-- 白子颜色 -->
+        <attr name="rightscolor" format="reference|color"/>
+        <!-- 棋盘颜色 -->
+        <attr name="qipancolor" format="reference|color"/>
+        <!-- 动画时间 -->
+        <attr name="animalstime" format="integer"/>
+    </declare-styleable>
 </resources>

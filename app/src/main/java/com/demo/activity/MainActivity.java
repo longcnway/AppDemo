@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +26,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Intent intent;
     private Button bt_BottomTabLayout, bt_RecyclerView, bt_Intent, bt_Out_Login,
             bt_BroadcastReceiver, bt_Notification, bt_WebView, bt_HttpURLConnection,
-            bt_OkHttp, bt_ServcieTest, bt_Download, bt_UI_MaterialDesign;
+            bt_OkHttp, bt_ServcieTest, bt_Download, bt_UI_MaterialDesign, bt_My_View,
+            bt_Weiqi, bt_Event_Dispatch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_ServcieTest = (Button) findViewById(R.id.bt_serviceTest);
         bt_Download = (Button) findViewById(R.id.bt_download);
         bt_UI_MaterialDesign = (Button) findViewById(R.id.bt_UI_MaterialDesign);
+        bt_My_View = (Button) findViewById(R.id.bt_my_view);
+        bt_Weiqi = (Button) findViewById(R.id.bt_weiqi);
+        bt_Event_Dispatch = (Button) findViewById(R.id.bt_event_dispatch);
 
         bt_BottomTabLayout.setOnClickListener(this);
         bt_RecyclerView.setOnClickListener(this);
@@ -57,6 +62,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_ServcieTest.setOnClickListener(this);
         bt_Download.setOnClickListener(this);
         bt_UI_MaterialDesign.setOnClickListener(this);
+        bt_My_View.setOnClickListener(this);
+        bt_Weiqi.setOnClickListener(this);
+        bt_Event_Dispatch.setOnClickListener(this);
+        Log.d("TAG", "MainActivity-->onCreate()");
     }
 
     /**
@@ -151,6 +160,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 intent = new Intent(MainActivity.this, UIMaterialDesignActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.bt_my_view :
+                //自定义view画圆
+                intent = new Intent(MainActivity.this, MyViewActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_weiqi :
+                //围棋
+                intent = new Intent(MainActivity.this, WeiqiActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_event_dispatch :
+                //事件分发
+                intent = new Intent(MainActivity.this, EventDispatchActivity.class);
+                startActivity(intent);
+                break;
+
 
             default:break;
         }
@@ -228,5 +253,47 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("TAG", "MainActivity-->onStart()");
+    }
+
+    /**
+     * 获得焦点
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("TAG", "MainActivity-->onResume()");
+    }
+
+    /**
+     * 失去焦点
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("TAG", "MainActivity-->onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("TAG", "MainActivity-->onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("TAG", "MainActivity-->onDestroy()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("TAG", "MainActivity-->onRestart()");
     }
 }
