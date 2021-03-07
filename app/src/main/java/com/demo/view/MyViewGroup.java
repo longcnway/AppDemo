@@ -45,6 +45,11 @@ public class MyViewGroup extends ViewGroup {
         myView.layout(10, 10,500,500);
     }
 
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+    }
+
     /**
      * 负责把当前这个View绘制出来
      * @param canvas

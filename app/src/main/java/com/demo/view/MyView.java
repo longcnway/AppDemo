@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+
 public class MyView extends View {
 
     private int mWidth, mHeigth;
@@ -17,9 +19,10 @@ public class MyView extends View {
         super(context);
     }
 
-    public MyView(Context context, AttributeSet attrs) {
+    public MyView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
+
 
     /**
      * 负责对当前View的尺寸进行测量

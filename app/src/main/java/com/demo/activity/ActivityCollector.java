@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 或有活动activity收集器
+ * 所有活动activity收集器
  */
 public class ActivityCollector {
 
