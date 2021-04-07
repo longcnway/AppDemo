@@ -89,10 +89,16 @@
         android:layout_height="wrap_content"
         android:text="围棋"/>
 
-    <Button
+    <!--<Button
         android:id="@+id/bt_event_dispatch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="事件分发"/>
+        android:text="事件分发"/>-->
+
+    <Button
+        android:id="@+id/bt_con_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="约束布局"/>
 
 </LinearLayout>

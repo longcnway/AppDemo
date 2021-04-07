@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDemo">
-        <activity android:name=".EventDispatchActivity"></activity>
+        <activity android:name=".ConstraintLayoutTestActivity"></activity>
+        <activity android:name=".EventDispatchActivity" />
         <activity android:name=".WeiqiActivity" />
         <activity android:name=".MyViewActivity" />
 

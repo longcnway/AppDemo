@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/bgc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30sp"
+        android:text="标题"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bgc">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mContLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/bgc">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mContLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/mContLayout"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+
+                <TextView
+                    android:id="@+id/mTvAllCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="30dp"
+                    android:text="¥ 200.00"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mTvCoinText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvAllCoin"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:text="提现金额"/>
+
+                <TextView
+                    android:id="@+id/mTvHandleProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvCoinText"
+                    android:layout_marginTop="30dp"
+                    android:text="处理进度"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/mTvStatus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCoinText"
+                    app:layout_constraintTop_toTopOf="@+id/mTvHandleProgress"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="处理中"/>
+                <TextView
+                    android:id="@+id/mTvCreateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/mTvStatus1"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvStatus1"
+                    android:text="2020-05-15 12:35:15"/>
+                <ImageView
+                    android:id="@+id/mIvStatus1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/mTvStatus1"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintTop_toTopOf="@+id/mTvStatus1"
+                    app:layout_constraintBottom_toBottomOf="@+id/mTvStatus1"
+                    app:srcCompat="@drawable/tab2_blue" />
+                <View
+                    android:id="@+id/mVUserLineTransactionStatus1"
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    app:layout_constraintStart_toStartOf="@+id/mIvStatus1"
+                    app:layout_constraintEnd_toEndOf="@+id/mIvStatus1"
+                    app:layout_constraintTop_toBottomOf="@+id/mIvStatus1"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/mTvStatus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateTime"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvCreateTime"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="结算中"/>
+                <TextView
+                    android:id="@+id/mTvPayTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCoinText"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvStatus2"
+                    android:text="2020-05-15 12:35:15"/>
+                <ImageView
+                    android:id="@+id/mIvStatus2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/mTvStatus2"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintTop_toTopOf="@+id/mTvStatus2"
+                    app:layout_constraintBottom_toBottomOf="@+id/mTvStatus2"
+                    app:srcCompat="@drawable/tab1_gray" />
+                <View
+                    android:id="@+id/mVUserLineTransactionStatus2"
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    app:layout_constraintStart_toStartOf="@+id/mIvStatus2"
+                    app:layout_constraintEnd_toEndOf="@+id/mIvStatus2"
+                    app:layout_constraintTop_toBottomOf="@+id/mIvStatus2"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/mTvStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/mTvStatus2"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvPayTime"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="打款失败"/>
+                <TextView
+                    android:id="@+id/mTvStatus3_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/mTvStatus3"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvStatus3"
+                    android:text="打款失败，请联系运营人员"/>
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/mTvStatus3"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintTop_toTopOf="@+id/mTvStatus3"
+                    app:layout_constraintBottom_toBottomOf="@+id/mTvStatus3"
+                    app:srcCompat="@drawable/tab1_blue" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mContLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mContLayout1"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="提现总额"/>
+                <TextView
+                    android:id="@+id/mTv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="200.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv1"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="到账总额"/>
+                <TextView
+                    android:id="@+id/mTv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv1"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="192.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv2"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="总手续费"/>
+                <TextView
+                    android:id="@+id/mTv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv2"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="8.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv3"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="到账时间"/>
+                <TextView
+                    android:id="@+id/mTv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv3"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="2020-12-10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv4"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="到账卡号"/>
+                <TextView
+                    android:id="@+id/mTv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv4"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="622848******7778" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv5"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="到账卡号"/>
+                <TextView
+                    android:id="@+id/mTv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv5"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="20210328233918892" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/mContLayout2"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray" />
+
+            <!-- 入账明细 -->
+            <TextView
+                android:id="@+id/mTvAccountInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mContLayout2"
+                app:layout_constraintStart_toStartOf="@+id/mContLayout2"
+                android:layout_marginTop="40dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="入账明细"/>
+
+            <!-- 代开发票 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mContLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mTvAccountInfo"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+                <TextView
+                    android:id="@+id/mTv10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="代开发票"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv10"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="提现金额"/>
+                <TextView
+                    android:id="@+id/mTv11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv10"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="100.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv11"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="到账金额"/>
+                <TextView
+                    android:id="@+id/mTv12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv11"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="92.00" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv12"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="手续费"/>
+                <TextView
+                    android:id="@+id/mTv13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv12"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="8.00" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 抵扣发票 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mContLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mContLayout3"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+
+                <TextView
+                    android:id="@+id/mTv20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="代开发票"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv20"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="提现金额"/>
+                <TextView
+                    android:id="@+id/mTv21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv20"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="100.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv21"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="到账金额"/>
+                <TextView
+                    android:id="@+id/mTv22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv21"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="100.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/mTv22"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="手续费"/>
+                <TextView
+                    android:id="@+id/mTv23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTv22"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="0.00" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

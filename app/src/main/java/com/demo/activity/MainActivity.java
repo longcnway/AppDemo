@@ -27,7 +27,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Button bt_BottomTabLayout, bt_RecyclerView, bt_Intent, bt_Out_Login,
             bt_BroadcastReceiver, bt_Notification, bt_WebView, bt_HttpURLConnection,
             bt_OkHttp, bt_ServcieTest, bt_Download, bt_UI_MaterialDesign, bt_My_View,
-            bt_Weiqi, bt_Event_Dispatch;
+            bt_Weiqi, bt_Event_Dispatch, bt_Con_Layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_UI_MaterialDesign = (Button) findViewById(R.id.bt_UI_MaterialDesign);
         bt_My_View = (Button) findViewById(R.id.bt_my_view);
         bt_Weiqi = (Button) findViewById(R.id.bt_weiqi);
-        bt_Event_Dispatch = (Button) findViewById(R.id.bt_event_dispatch);
+//        bt_Event_Dispatch = (Button) findViewById(R.id.bt_event_dispatch);
+        bt_Con_Layout = (Button) findViewById(R.id.bt_con_layout);
 
         bt_BottomTabLayout.setOnClickListener(this);
         bt_RecyclerView.setOnClickListener(this);
@@ -64,8 +65,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         bt_UI_MaterialDesign.setOnClickListener(this);
         bt_My_View.setOnClickListener(this);
         bt_Weiqi.setOnClickListener(this);
-        bt_Event_Dispatch.setOnClickListener(this);
+//        bt_Event_Dispatch.setOnClickListener(this);
+        bt_Con_Layout.setOnClickListener(this::onClick);
         Log.d("TAG", "MainActivity-->onCreate()");
+
+
     }
 
     /**
@@ -170,12 +174,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 intent = new Intent(MainActivity.this, WeiqiActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.bt_event_dispatch :
+            /*case R.id.bt_event_dispatch :
                 //事件分发
                 intent = new Intent(MainActivity.this, EventDispatchActivity.class);
                 startActivity(intent);
+                break;*/
+            case R.id.bt_con_layout :
+                //约束布局
+                intent = new Intent(MainActivity.this, ConstraintLayoutTestActivity.class);
+                startActivity(intent);
                 break;
-
 
             default:break;
         }

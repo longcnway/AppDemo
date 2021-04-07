@@ -38,6 +38,7 @@ public class Tab1Fragment extends Fragment {
 
         mTextView = view.findViewById(R.id.tab1_TV);
         Bundle bundle = getArguments();
+        bundle.getInt("tab_position");
         if(bundle != null){
             mTextView.setText("Tab1Fragment---" +getResources().getString(DataGenerator.mTabtext[bundle.getInt("tab_position")]).toString() );
         }

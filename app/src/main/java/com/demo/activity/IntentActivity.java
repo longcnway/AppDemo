@@ -3,6 +3,7 @@ package com.demo.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ public class IntentActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent);
 
+        Log.d("TAG", "IntentActivity-->onCreate()");
         bt_Intent_show = (Button) findViewById(R.id.bt_intent_show);
         bt_Intent_hide = (Button) findViewById(R.id.bt_intent_hide);
         bt_back_result = (Button) findViewById(R.id.bt_back_result);
@@ -61,5 +63,47 @@ public class IntentActivity extends BaseActivity {
         intent.putExtra("data_return", "这是IntentActivity返回的数据");
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("TAG", "IntentActivity-->onStart()");
+    }
+
+    /**
+     * 获得焦点
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("TAG", "IntentActivity-->onResume()");
+    }
+
+    /**
+     * 失去焦点
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("TAG", "IntentActivity-->onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("TAG", "IntentActivity-->onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("TAG", "IntentActivity-->onDestroy()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("TAG", "IntentActivity-->onRestart()");
     }
 }
